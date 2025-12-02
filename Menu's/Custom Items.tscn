@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://mnldechk1fpi"]
+
+[ext_resource type="Script" uid="uid://12ysgmbkl2ol" path="res://Scripts/custom_items.gd" id="1_cqn3c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqn3c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+
+[node name="Top" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(2560, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Top/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Custom Orders"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/Top"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Home"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Top/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Finished Orders"
+horizontal_alignment = 1
+
+[node name="Middle" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 1142)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Middle"]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Middle/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Middle"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="VBoxContainer/Middle"]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Middle/ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bottom" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(2560, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/Bottom"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Add Order"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Top/Button" to="." method="_on_Home_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Bottom/Button" to="." method="_on_add_order_button_pressed"]

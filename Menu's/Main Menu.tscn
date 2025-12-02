@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bulh6jjwcxycq"]
+
+[ext_resource type="Script" uid="uid://bgj0kmetuq72j" path="res://Scripts/main_menu.gd" id="1_nugh3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nugh3")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+offset_right = 2560.0
+offset_bottom = 1440.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(0, 200)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Menu/HBoxContainer"]
+custom_minimum_size = Vector2(51, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+
+[node name="Label" type="Label" parent="Menu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Sindrigil"
+
+[node name="Label2" type="Label" parent="Menu/HBoxContainer"]
+custom_minimum_size = Vector2(1460, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+
+[node name="Button" type="Button" parent="Menu/HBoxContainer"]
+custom_minimum_size = Vector2(650, 0)
+layout_direction = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Custom Items"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu"]
+custom_minimum_size = Vector2(2560, 1000)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="Menu/ScrollContainer"]
+custom_minimum_size = Vector2(2560, 1200)
+layout_mode = 2
+theme_override_constants/h_separation = 325
+theme_override_constants/v_separation = 350
+columns = 8
+
+[connection signal="pressed" from="Menu/HBoxContainer/Button" to="." method="_on_custom_items_button_pressed"]
