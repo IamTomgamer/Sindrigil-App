@@ -23,10 +23,26 @@ layout_mode = 0
 offset_right = 300.0
 offset_bottom = 325.0
 
-[node name="Number" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Less" type="Button" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "<"
+
+[node name="Number" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 39
 horizontal_alignment = 1
+
+[node name="More" type="Button" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ">"
 
 [node name="Image" type="TextureRect" parent="VBoxContainer"]
 clip_contents = true
@@ -45,11 +61,5 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 300.0
-offset_bottom = 325.0
-ignore_texture_size = true
-stretch_mode = 0
-
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Less" to="." method="_on_less_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/More" to="." method="_on_more_pressed"]

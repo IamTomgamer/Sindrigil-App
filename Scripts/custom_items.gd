@@ -3,6 +3,12 @@ extends Control
 @onready var grid = $VBoxContainer/Middle/ScrollContainer/VBoxContainer
 var card_scene = preload("res://Cards/Custom_Item.tscn")
 
+func _input(event):
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_R:
+			load_items("user://custom")
+			load_finished_items("user://custom")
+			# Do your action here
 func _ready():
 	load_items("user://custom")
 	load_finished_items("user://custom")

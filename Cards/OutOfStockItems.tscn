@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdc41jxotw02"]
+
+[ext_resource type="Script" uid="uid://cxf44oej7dcuf" path="res://Scripts/out_of_stock_items.gd" id="1_ksmam"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksmam"]
+bg_color = Color(0.70980394, 0.06666667, 0, 1)
+
+[sub_resource type="Theme" id="Theme_ka6cf"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ksmam")
+
+[node name="OutOfStockItems" type="Control"]
+custom_minimum_size = Vector2(650, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 650.0
+offset_bottom = 150.0
+script = ExtResource("1_ksmam")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(650, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_ka6cf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(650, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(650, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+text = "Product Out Of Stock"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

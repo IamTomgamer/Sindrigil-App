@@ -43,3 +43,7 @@ func save_item(product_name_node: LineEdit, client_name_node: LineEdit) -> Strin
 	
 	# Return the folder path so caller can use it
 	return folder_path
+
+
+func _on_home_button_pressed() -> void:
+	Global.CustomItemsScreen()

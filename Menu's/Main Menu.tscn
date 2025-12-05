@@ -36,16 +36,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Custom Items"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Menu"]
-custom_minimum_size = Vector2(2560, 1000)
+[node name="HBoxContainer3" type="HBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu/HBoxContainer2"]
+custom_minimum_size = Vector2(1910, 1000)
 layout_mode = 2
 vertical_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="Menu/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Menu/HBoxContainer2/ScrollContainer"]
 custom_minimum_size = Vector2(2560, 1200)
 layout_mode = 2
 theme_override_constants/h_separation = 325
 theme_override_constants/v_separation = 350
 columns = 8
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Menu/HBoxContainer2"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+
+[node name="OOS" type="VBoxContainer" parent="Menu/HBoxContainer2/ScrollContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 15
 
 [connection signal="pressed" from="Menu/HBoxContainer/Button" to="." method="_on_custom_items_button_pressed"]
